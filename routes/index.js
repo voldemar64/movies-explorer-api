@@ -13,3 +13,5 @@ router.use('/movies', auth, require('./movies'));
 router.use('*', (_req, res, next) => {
   next(new NotFound('Страница не найдена'));
 });
+
+module.exports = router;
