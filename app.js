@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
-const { limiter } = require('./middlewares/rateLimiter');
+const { rateLimit } = require('./middlewares/rateLimiter');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const errorHandler = require('./middlewares/errors');
 const routes = require('./routes/index');
@@ -31,7 +31,7 @@ app.use(
 
 app.use(helmet());
 app.use(requestLogger);
-app.use(limiter);
+app.use(rateLimit);
 
 app.use(routes);
 
