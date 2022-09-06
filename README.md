@@ -1,2 +1,2 @@
 # movies-explorer-api
-Y.Practicum diploma
+Y.Practicum diploma's BACKEND
