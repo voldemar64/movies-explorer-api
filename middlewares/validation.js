@@ -1,6 +1,6 @@
 const { Joi, celebrate } = require('celebrate');
 
-const linkExpression = /(http:\/\/|https:\/\/)(www\.)*\S*/;
+const linkExpression = /(http:\/\/|https:\/\/)(www\.)*[a-z0-9\S]*/;
 
 module.exports.signinValidation = celebrate({
   body: Joi.object().keys({
@@ -11,9 +11,7 @@ module.exports.signinValidation = celebrate({
 
 module.exports.signupValidation = celebrate({
   body: Joi.object().keys({
-    name: Joi.string().min(2).max(30),
-    about: Joi.string().min(2).max(30),
-    avatar: Joi.string().pattern(linkExpression),
+    name: Joi.string().min(2).max(30).required(),
     email: Joi.string().required().email(),
     password: Joi.string().required(),
   }),
@@ -28,7 +26,7 @@ module.exports.currentUserValidation = celebrate({
 module.exports.userValidation = celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30).required(),
-    about: Joi.string().min(2).max(30).required(),
+    email: Joi.string().required().email(),
   }),
 });
 

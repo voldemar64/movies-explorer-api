@@ -61,11 +61,11 @@ const moviesSchema = new mongoose.Schema({
     required: true,
   },
   nameRU: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     required: true,
   },
   nameEN: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     required: true,
   },
 });
