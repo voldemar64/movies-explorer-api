@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-
-const linkExpression = /(http:\/\/|https:\/\/)(www\.)*\S*/;
+const validator = require('validator');
 
 const moviesSchema = new mongoose.Schema({
   country: {
@@ -31,7 +30,7 @@ const moviesSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator: (link) => linkExpression.test(link),
+      validator: (link) => validator.isUrl(link),
       message: 'Неверная ссылка на картинку',
     },
   },
@@ -39,7 +38,7 @@ const moviesSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator: (link) => linkExpression.test(link),
+      validator: (link) => validator.isUrl(link),
       message: 'Неверная ссылка на трейлер',
     },
   },
@@ -47,7 +46,7 @@ const moviesSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator: (link) => linkExpression.test(link),
+      validator: (link) => validator.isUrl(link),
       message: 'Неверная ссылка на миникартинку',
     },
   },
