@@ -80,7 +80,7 @@ module.exports.patchUser = (req, res, next) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
         next(new ValidationError('Переданы некорректные данные при обновлении профиля.'));
       } else if (err.code === 11000) {
-        throw new ConflictError('Введите другой email.');
+        next(new ConflictError('Введите другой email.'));
       } else {
         next(err);
       }

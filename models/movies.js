@@ -30,7 +30,7 @@ const moviesSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator: (link) => validator.isUrl(link),
+      validator: (link) => validator.isURL(link),
       message: 'Неверная ссылка на картинку',
     },
   },
@@ -38,7 +38,7 @@ const moviesSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator: (link) => validator.isUrl(link),
+      validator: (link) => validator.isURL(link),
       message: 'Неверная ссылка на трейлер',
     },
   },
@@ -46,7 +46,7 @@ const moviesSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator: (link) => validator.isUrl(link),
+      validator: (link) => validator.isURL(link),
       message: 'Неверная ссылка на миникартинку',
     },
   },
