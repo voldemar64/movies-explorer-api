@@ -1,8 +1,8 @@
 const allowedCors = [
-  'https://movies.vova.nomoredomains.xyz',
-  'http://movies.vova.nomoredomains.xyz',
-  'https://api.movies.vova.nomoredomains.xyz',
-  'http://api.movies.vova.nomoredomains.xyz',
+  'https://movies.vova.nomoredomains.sbs',
+  'http://movies.vova.nomoredomains.sbs',
+  'https://api.movies.vova.nomoredomains.sbs',
+  'http://api.movies.vova.nomoredomains.sbs',
 ];
 
 const cors = (req, res, next) => {
