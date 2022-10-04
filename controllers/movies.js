@@ -59,7 +59,7 @@ module.exports.deleteMovie = (req, res, next) => {
         throw new Forbidden('Невозможно удалить чужой фильм.');
       }
       Movies.findByIdAndRemove(id)
-        .then(() => res.send({ movie }))
+        .then(() => res.send(movie))
         .catch((err) => {
           next(err);
         });
