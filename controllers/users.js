@@ -25,11 +25,9 @@ module.exports.getUser = (req, res, next) => {
         next(new NotFound('Пользователь по указанному _id не найден.'));
       }
       return res.send({
-        user: {
-          email: user.email,
-          name: user.name,
-          _id: user._id,
-        },
+        email: user.email,
+        name: user.name,
+        _id: user._id,
       });
     })
     .catch((err) => {
